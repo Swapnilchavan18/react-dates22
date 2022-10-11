@@ -109,8 +109,9 @@ class CalendarMonth extends React.PureComponent {
     this.queueSetMonthTitleHeight();
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { month, enableOutsideDays, firstDayOfWeek } = nextProps;
+  // componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
+    const { month, enableOutsideDays, firstDayOfWeek } = this.props;
     const {
       month: prevMonth,
       enableOutsideDays: prevEnableOutsideDays,
